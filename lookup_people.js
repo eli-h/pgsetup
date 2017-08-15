@@ -20,7 +20,7 @@ client.connect((err) => {
     } 
     let userInputs = process.argv.slice(2)
     let person = result.rows.find((person) => userInputs.includes(person.first_name) || userInputs.includes(person.last_name))
-    console.log(person); //output: 1
+    console.log(`${person.id}: ${person.first_name} ${person.last_name}, ${person.birthdate}`); //output: 1
     client.end();
   });
 });
